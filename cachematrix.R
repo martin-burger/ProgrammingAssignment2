@@ -9,44 +9,24 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
-  
-  
-  
+   
   ## initializing Null
-  
-  
   
   m <- NULL
   
-  
-  
   ## set the inverse
-  
-  
   
   setmatrix <- function(matrix) m <<- matrix
   
-  
-  
   ## get the inverse
-  
-  
   
   getmatrix <- function() m
   
-  
-  
   ## get the value of the matrix
-  
-  
   
   get <- function() x
   
-  
-  
   ## set the value of the matrix
-  
-  
   
   set <- function(y) {
     
@@ -54,14 +34,9 @@ makeCacheMatrix <- function(x = matrix()) {
     
     m <<- NULL
     
-    
-    
   }
   
-  
-  
   ## return a list with functions
-  
   
   
   list(setmatrix = setmatrix,
@@ -70,11 +45,7 @@ makeCacheMatrix <- function(x = matrix()) {
        
        get = get, set = set)                           
   
-  
-  
 }
-
-
 
 ## This function calculates the inverse of the
 
@@ -89,18 +60,12 @@ makeCacheMatrix <- function(x = matrix()) {
 ## the cache.
 
 
-
 cachesolve <- function(x, ...) {
-  
-  
-  
+   
   m <- x$getmatrix()
   
   
-  
   ## checks if already calculated
-  
-  
   
   if(!is.null(m)) {
     
@@ -111,24 +76,15 @@ cachesolve <- function(x, ...) {
   }
   
   
-  
   ## if not get the matrix and calculate the inverse
-  
-  
   
   data <- x$get()
   
   m <- solve(data)
   
-  
-  
   ## and set the outcome into the cache               
   
-  
-  
   x$setmatrix(m)
-  
-  
   
   m
   
